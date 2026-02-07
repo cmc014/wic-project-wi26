@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Chart Calculator - CosmicPop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">✨ CosmicPop</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+            </ul>
+        </nav>
+
+        <!-- Calculator Section -->
+        <section class="section" id="calculator">
+            <h2>🌙 Birth Chart Calculator</h2>
+            <form id="birthChartForm" onsubmit="calculateChart(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="birthdate">Birth Date</label>
+                        <input type="date" id="birthdate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthtime">Birth Time</label>
+                        <input type="time" id="birthtime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Birth Location</label>
+                        <input type="text" id="location" placeholder="City, Country" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary btn-calculate">Generate My Cosmic Chart 🔮</button>
+            </form>
+
+            <!-- Results -->
+            <div class="results-section" id="results">
+                <div class="chart-wheel">
+                    <div class="chart-center">
+                        <h3>Your Chart</h3>
+                        <p id="chartSummary"></p>
+                    </div>
+                </div>
+
+                <div class="signs-grid">
+                    <div class="sign-card">
+                        <div class="sign-icon">☀️</div>
+                        <h3>Sun Sign</h3>
+                        <div class="sign-name" id="sunSign">---</div>
+                        <div class="sign-date" id="sunDate"></div>
+                    </div>
+                    <div class="sign-card">
+                        <div class="sign-icon">🌙</div>
+                        <h3>Moon Sign</h3>
+                        <div class="sign-name" id="moonSign">---</div>
+                        <div class="sign-date" id="moonDate"></div>
+                    </div>
+                    <div class="sign-card">
+                        <div class="sign-icon">⬆️</div>
+                        <h3>Rising Sign</h3>
+                        <div class="sign-name" id="risingSign">---</div>
+                        <div class="sign-date" id="risingDate"></div>
+                    </div>
+                    <div class="sign-card">
+                        <div class="sign-icon">💕</div>
+                        <h3>Venus Sign</h3>
+                        <div class="sign-name" id="venusSign">---</div>
+                        <div class="sign-date" id="venusDate"></div>
+                    </div>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="recommendations-section">
+                    <h2>Your Pop Culture Matches</h2>
+                    <p>Based on your <span id="mainSign"></span> sun sign</p>
+
+                    <div class="category-tabs">
+                        <button class="tab-btn active" onclick="showCategory('all')">All</button>
+                        <button class="tab-btn" onclick="showCategory('music')">🎵 Music</button>
+                        <button class="tab-btn" onclick="showCategory('movies')">🎬 Movies</button>
+                        <button class="tab-btn" onclick="showCategory('fashion')">👗 Fashion</button>
+                        <button class="tab-btn" onclick="showCategory('vibes')">✨ Vibes</button>
+                    </div>
+
+                    <div class="recommendations-grid" id="recommendationsGrid">
+                        <!-- Recommendations will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Made with 💫 by CosmicPop | Your stars, your style</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
