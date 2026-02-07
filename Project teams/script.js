@@ -1,4 +1,6 @@
 // Zodiac sign data with date ranges
+console.log("script.js loaded");
+
 const zodiacSigns = [
     { name: 'Capricorn', start: [12, 22], end: [1, 19], emoji: '♑' },
     { name: 'Aquarius', start: [1, 20], end: [2, 18], emoji: '♒' },
@@ -110,11 +112,12 @@ function getZodiacSign(month, day) {
 }
 
 function calculateChart(event) {
+
     event.preventDefault();
 
     const birthdate = document.getElementById('birthdate').value;
     const birthtime = document.getElementById('birthtime').value;
-    const location = document.getElementById('location').value;
+    const birthLocation = document.getElementById('location').value;
 
     if (!birthdate || !birthtime || !location) {
         alert('Please fill in all fields!');
@@ -133,8 +136,10 @@ function calculateChart(event) {
     const timeHour = parseInt(birthtime.split(':')[0]);
 
     const moonSign = allSigns[(allSigns.indexOf(sunSign) + (timeHour % 4)) % 12];
-    const risingSign = allSigns[(allSigns.indexOf(sunSign) + (timeHour % 6)) % 12];
+    // const risingSign = allSigns[(allSigns.indexOf(sunSign) + (timeHour % 6)) % 12];
     const venusSign = allSigns[(allSigns.indexOf(sunSign) + 2) % 12];
+    const locationOffset = birthLocation.length % 12;
+    const risingSign = allSigns[(allSigns.indexOf(sunSign) + locationOffset) % 12];
 
     // Display results
     document.getElementById('sunSign').textContent = sunSign;
@@ -144,7 +149,7 @@ function calculateChart(event) {
     document.getElementById('risingSign').textContent = risingSign;
     document.getElementById('risingDate').textContent = 'First Impression';
     document.getElementById('venusSign').textContent = venusSign;
-    document.getElementById('venusDate').textContent = 'Love & Style';
+    document.getElementById('venusDate').textContent = 'Love & Passion';
     document.getElementById('mainSign').textContent = sunSign;
     document.getElementById('chartSummary').textContent = sunSign;
 
@@ -217,3 +222,11 @@ function showCategory(category) {
 function scrollToCalculator() {
     document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("birthChartForm");
+
+    form.addEventListener("submit", (event) => {
+        calculateChart(event);
+    });
+});

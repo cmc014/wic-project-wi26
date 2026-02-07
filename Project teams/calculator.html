@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birth Chart Calculator - CosmicPop</title>
+    <title>Calculate your Birth Chart</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,9 +21,9 @@
 
         <!-- Calculator Section -->
         <section class="section" id="calculator">
-            <h2>🌙 Birth Chart Calculator</h2>
-            <form id="birthChartForm" onsubmit="calculateChart(event)">
-                <div class="form-grid">
+            <h2>Calculate Your Birth Chart</h2>
+                <form id="birthChartForm">                
+                    <div class="form-grid">
                     <div class="form-group">
                         <label for="birthdate">Birth Date</label>
                         <input type="date" id="birthdate" required>
@@ -37,7 +37,7 @@
                         <input type="text" id="location" placeholder="City, Country" required>
                     </div>
                 </div>
-                <button type="submit" class="btn-primary btn-calculate">Generate My Cosmic Chart 🔮</button>
+                <button type="submit" class="btn-primary btn-calculate">Find Out Your Birth Chart</button>
             </form>
 
             <!-- Results -->

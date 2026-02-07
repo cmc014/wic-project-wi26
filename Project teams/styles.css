@@ -205,12 +205,12 @@ nav {
 /* Results Section */
 .results-section {
     display: none;
-    margin-top: 60px;
 }
 
 .results-section.active {
     display: block;
 }
+
 
 .chart-wheel {
     position: relative;
