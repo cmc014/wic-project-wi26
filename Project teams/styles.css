@@ -65,6 +65,63 @@ nav {
     border-radius: 20px;
 }
 
+/* Sidebar Menu*/
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    z-index: 1; /* makes it stay on top*/
+    top: 0; /* makes it stay at the top */
+    left: 0;
+    background-color: black;
+    position: fixed;
+    padding-top: 60px;
+    height: 100%;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+/* Sidebar Links */
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+/* When you hover? */
+.sidebar a:hover {
+    color: gold;
+}
+/*Current Links on Sidebar */
+.sidebar a.active{
+    background-color: brown ;
+    color: orange;
+}
+
+/* When mouse on Sidebar */
+.sidebar a.hover:not(.active) {
+    background-color: brown;
+    color: white;
+}
+
+/* Close button */
+.sidebar .closebutton {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Page Content */
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
 .logo {
     font-size: 28px;
     font-weight: 700;
