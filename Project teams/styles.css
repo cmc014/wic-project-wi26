@@ -78,7 +78,7 @@ nav {
     padding-top: 60px;
     height: 100%;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.1s;
 }
 
 /* Sidebar Links */
@@ -87,7 +87,7 @@ nav {
     color: white;
     padding: 16px;
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.1s;
 }
 
 /* When you hover? */
@@ -101,7 +101,7 @@ nav {
 }
 
 /* When mouse on Sidebar */
-.sidebar a.hover:not(.active) {
+.sidebar a:hover:not(.active) {
     background-color: brown;
     color: white;
 }
