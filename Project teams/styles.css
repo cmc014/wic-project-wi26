@@ -74,7 +74,7 @@ nav {
     z-index: 1; /* makes it stay on top*/
     top: 0; /* makes it stay at the top */
     left: 0;
-    background-color: black;
+    background-color: #0d001a;
     position: fixed;
     padding-top: 60px;
     height: 100%;
@@ -100,7 +100,7 @@ nav {
 
 /* When you hover? */
 .sidebar a:hover {
-    color: gold;
+    color: #ffd700;
 }
 /*Current Links on Sidebar */
 .sidebar a.active{
@@ -110,7 +110,7 @@ nav {
 
 /* When mouse on Sidebar */
 .sidebar a:hover:not(.active) {
-    background-color: brown;
+    background-color: #400080;
     color: white;
 }
 
@@ -133,6 +133,10 @@ div.content {
 /* OPEN BUTTON?? */
 .openbutton{
     position: fixed;
+    background-color: #0d001a;
+    color: white;
+    border: #400080;
+    border-radius: 4px;
     top: 15px;
     left: 15px;
     z-index: 10000;
@@ -143,6 +147,10 @@ div.content {
 /* CLOSE BUTTON? */
 .closebutton{
     position: fixed;
+    background-color: #0d001a;
+    color: white;
+    border: #400080;
+    border-radius: 4px;
     top: 350px;
     left: 15px;
     z-index: 9999;
