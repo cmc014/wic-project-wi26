@@ -69,7 +69,7 @@ nav {
 .sidebar {
     margin: 0;
     padding: 0;
-    width: 200px;
+    width: 0px;
     z-index: 1; /* makes it stay on top*/
     top: 0; /* makes it stay at the top */
     left: 0;
@@ -120,6 +120,26 @@ div.content {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
+}
+
+/* OPEN BUTTON?? */
+.openbutton{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 9999;
+    cursor: pointer;
+    padding: 10px 14px
+}
+
+/* CLOSE BUTTON? */
+.closebutton{
+    position: fixed;
+    top: 350px;
+    left: 15px;
+    z-index: 9999;
+    cursor: pointer;
+    padding: 10px 14px
 }
 
 .logo {

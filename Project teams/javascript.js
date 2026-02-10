@@ -11,8 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".sidebar").style.width = "0";
     }
 
+    document.getElementById("openbutton").addEventListener("click", opensidebar);
+    document.getElementById("closebutton").addEventListener("click", closesidebar);
+
     window.opensidebar = opensidebar;
     window.closesidebar = closesidebar;
+
+
 });
 
 
