@@ -79,6 +79,13 @@ nav {
     height: 100%;
     overflow-x: hidden;
     transition: 0.1s;
+    pointer-events: none;
+}
+
+/* Side bar open */
+.sidebar.open{
+    width: 250px;
+    pointer-events: auto;
 }
 
 /* Sidebar Links */
@@ -127,7 +134,7 @@ div.content {
     position: fixed;
     top: 15px;
     left: 15px;
-    z-index: 9999;
+    z-index: 10000;
     cursor: pointer;
     padding: 10px 14px
 }
