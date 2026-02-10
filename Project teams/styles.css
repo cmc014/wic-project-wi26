@@ -68,6 +68,7 @@ nav {
 /* Sidebar Menu*/
 .sidebar {
     margin: 0;
+    height: 100%;
     padding: 0;
     width: 0px;
     z-index: 1; /* makes it stay on top*/
