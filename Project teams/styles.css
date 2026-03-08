@@ -67,102 +67,12 @@ nav {
     border-radius: 20px;
 }
 
-/* Sidebar Menu*/
-.sidebar {
-    margin: 0;
-    height: 100%;
-    padding: 0;
-    width: 0px;
-    height: 100%;
-    position: fixed;
-    padding-top: 60px;
-
-    z-index: 1000; /* makes it stay above of everything else  (: */
-    top: 0; /* makes it stay at the top */
-    left: 0;
-
-    background-color: #0d001a;
-    
-    overflow-x: hidden;
-    transition: 0.1s;
-    pointer-events: none;
-}
-
-/* Side bar open */
-.sidebar.open{
-    width: 250px;
-    pointer-events: auto;
-}
-
-/* Sidebar Links */
-.sidebar a {
-    display: block;
-    color: white;
-    padding: 16px;
-    text-decoration: none;
-    transition: 0.1s;
-}
-
-/* When you hover? */
-.sidebar a:hover {
-    color: #ffd700;
-}
-/*Current Links on Sidebar */
-.sidebar a.active{
-    background-color: brown ;
-    color: orange;
-}
-
-/* When mouse on Sidebar */
-.sidebar a:hover:not(.active) {
-    background-color: #400080;
-    color: white;
-}
-
-/* Close button */
-.sidebar .closebutton {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
 /* Page Content */
 div.content {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
 }
-
-/* OPEN BUTTON?? */
-.openbutton{
-    position: fixed;
-    background-color: #0d001a;
-    color: white;
-    border: #400080;
-    border-radius: 4px;
-    top: 15px;
-    left: 15px;
-    z-index: 10000;
-    cursor: pointer;
-    padding: 10px 14px
-}
-
-/* CLOSE BUTTON? */
-.closebutton{
-    position: fixed;
-    background-color: #0d001a;
-    color: white;
-    border: #400080;
-    border-radius: 4px;
-    top: 350px;
-    left: 15px;
-    z-index: 9999;
-    cursor: pointer;
-    padding: 10px 14px
-}
-
 
 /* FLEX BOX INDEX PAGE*/
 .flex-container-index {
