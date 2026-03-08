@@ -57,11 +57,11 @@ const playlists = {
 };
 
 const celebrityMatches = {
-    "Aquarius": { "Pop":"Celebrity AA, AB, AC", "Indie":"Celebrity B", "R&B":"Celebrity C" },
-    "Pisces": { "Pop":"Celebrity PA, PB, PC", "Indie":"Celebrity E", "R&B":"Celebrity F" },
-    "Aries": { "Pop":"Celebrity AA, AB, AC", "Indie":"Celebrity AR2", "R&B":"Celebrity AR3" },
-    "Taurus": { "Pop":"Celebrity T1, T2, T3", "Indie":"Celebrity T2", "R&B":"Celebrity T3" },
-    "Gemini": { "Pop":"Celebrity G1, G2, G3", "Indie":"Celebrity G2", "R&B":"Celebrity G3" },
+    "Aquarius": { "Pop":"Celebrity AA", "Indie":"Celebrity B", "R&B":"Celebrity C" },
+    "Pisces": { "Pop":"Celebrity PA", "Indie":"Celebrity E", "R&B":"Celebrity F" },
+    "Aries": { "Pop":"Celebrity AA", "Indie":"Celebrity AR2", "R&B":"Celebrity AR3" },
+    "Taurus": { "Pop":"Celebrity T1", "Indie":"Celebrity T2", "R&B":"Celebrity T3" },
+    "Gemini": { "Pop":"Celebrity G1", "Indie":"Celebrity G2", "R&B":"Celebrity G3" },
     "Cancer": { "Pop":"Celebrity C", "Indie":"Celebrity C2", "R&B":"Celebrity C3" },
     "Leo": { "Pop":"Celebrity L", "Indie":"Celebrity L2", "R&B":"Celebrity L3" },
     "Virgo": { "Pop":"Celebrity V", "Indie":"Celebrity V2", "R&B":"Celebrity V3" },
