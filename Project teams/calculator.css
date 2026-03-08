@@ -1,0 +1,153 @@
+/*Content*/
+
+body {
+    margin: 0;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #140022, #22003a, #32004f);
+    color: white;
+    min-height: 100vh;
+}
+
+/*Content Area*/
+
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 90px 20px 40px 20px;
+}
+
+
+/*CARD*/
+.calculator-card{
+    width: 100%;
+    max-width: 700px;
+
+    background-color: linear-gradient(135deg, #140022, #22003a, #32004f);
+    border: 2px solid rgba(63, 2, 63, 0.507);
+    border-radius: 24px;
+    padding: 32px;
+
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgb(117, 1, 146);
+}
+
+/*WORDS*/
+
+.calculator-card h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2 rem;
+    color: white;
+    text-align: center;
+}
+
+.calculator-card .subtitles {
+    text-align: center;
+    color: white;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.calculator-card .subtitle-small {
+    color: red;
+    text-align: center;
+    margin-bottom: 24px;
+    opacity: 0.9;
+}
+
+
+
+/*SCROLL THING LAYOUT*/
+
+#zodiacForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 14px;
+    align-items: center;
+}
+
+/*LABLELSS*/
+
+#zodiacForm label{
+    font-weight: bold;
+    color: white;
+}
+
+/*INUPUTS*/
+#zodiacForm select{
+    width: 150px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid blue;
+    background-color: darkblue;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+#zodiacForm select:focus{
+    border: 2px solid linear-gradient(135deg, gold, gold, gold);
+    box-shadow: 0 0 0 2px gold;
+}
+
+#zodiacForm option{
+    color: white;
+}
+
+/*BUTTONSS*/
+
+#zodiacForm button{
+    grid-column: 1 /-1;
+    margin-top: 12px;
+    padding: 14px 12px;
+    border: none;
+    border-radius: 14px;
+
+    color: black;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#zodiacForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgb(45, 0, 67);
+}
+
+
+/*RESULTSS*/
+
+.results {
+    margin-top: 30px;
+    display: grid;
+    gap: 16px;
+}
+
+.result-box {
+    background: rgba(255, 255, 255, 0.08);
+
+    border-left: 5px solid #ffd700;
+    border-radius: 16px;
+    padding: 18px 20px;
+}
+
+.result-box h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #ffd700;
+}
+
+.result-box * {
+    margin: 0;
+    color: white;
+    line-height: 1.5;
+}
+
+#zodiacResult {
+    font-size: 1.5rem;
+    color: white
+}
