@@ -1,3 +1,4 @@
+// zodiac calculation 
 function getZodiac(month, day) {
     if ((month == 1 && day >= 20 && day <= 31) || (month == 2 && day <= 18)) {
         return "Aquarius";
@@ -41,6 +42,7 @@ function getZodiac(month, day) {
     }
 }
 
+//song rec library
 const playlists = {
     "Aquarius": { "Pop": ["Song A1","Song A2"], "Indie":["Song A3","Song A4"], "R&B":["Song A5","Song A6"] },
     "Pisces": { "Pop": ["Song P1","Song P2"], "Indie":["Song P3","Song P4"], "R&B":["Song P5","Song P6"] },
@@ -56,6 +58,59 @@ const playlists = {
     "Capricorn": { "Pop":["Song CP1"], "Indie":["Song CP2"], "R&B":["Song CP3"] }
 };
 
+// function for getting playlist based on zodiac and genre
+function getPlaylist(zodiac, genre) {
+    if (playlists[zodiac] && playlists[zodiac][genre]) {
+        return playlists[zodiac][genre];
+    }
+    return [];
+}
+
+// calculation for movie rec
+function getMovieRec (zodiac)
+{
+    if (zodiac == "Aquarius"){
+        return "movie"
+    }
+    if (zodiac == "Pisces"){
+        return "movie"
+    }
+    if (zodiac == "Aries"){
+        return "movie"
+    }
+    if (zodiac == "Taurus"){
+        return "movie"
+    }
+    if (zodiac == "Gemini"){
+        return "movie"
+    }
+    if (zodiac == "Cancer"){
+        return "movie"
+    }
+    if (zodiac == "Leo"){
+        return "movie"
+    }
+    if (zodiac == "Virgo"){
+        return "movie"
+    }
+    if (zodiac == "Libra"){
+        return "movie"
+    }
+    if (zodiac == "Scorpio"){
+        return "movie"
+    }
+    if (zodiac == "Sagittarius"){
+        return "movie"
+    }
+    if (zodiac == "Capricorn") {
+        return "movie"
+    }
+    else {
+        return "Error. Please try again"
+    }
+}
+
+// library for celebrity matches
 const celebrityMatches = {
     "Aquarius": { "Pop":"Celebrity AA", "Indie":"Celebrity B", "R&B":"Celebrity C" },
     "Pisces": { "Pop":"Celebrity PA", "Indie":"Celebrity E", "R&B":"Celebrity F" },
@@ -71,22 +126,58 @@ const celebrityMatches = {
     "Capricorn": { "Pop":"Celebrity CP", "Indie":"Celebrity CP2", "R&B":"Celebrity CP3" }
 };
 
-// 3. Functions to fetch songs/celebrity
-function getPlaylist(zodiac, genre) {
-    if (playlists[zodiac] && playlists[zodiac][genre]) {
-        return playlists[zodiac][genre];
-    }
-    return [];
-}
-
+// calculation function for celebrity
 function getCelebrity(zodiac, genre) {
     if (celebrityMatches[zodiac] && celebrityMatches[zodiac][genre]) {
         return celebrityMatches[zodiac][genre];
     }
     return "Unknown";
 }
+// destination calculation
+function getDestination (zodiac)
+{
+    if (zodiac == "Aquarius"){
+        return "destination1"
+    }
+    if (zodiac == "Pisces"){
+        return "destination2"
+    }
+    if (zodiac == "Aries"){
+        return "destination3"
+    }
+    if (zodiac == "Taurus"){
+        return "destination4"
+    }
+    if (zodiac == "Gemini"){
+        return "destination5"
+    }
+    if (zodiac == "Cancer"){
+        return "destination6"
+    }
+    if (zodiac == "Leo"){
+        return "destination7"
+    }
+    if (zodiac == "Virgo"){
+        return "destination8"
+    }
+    if (zodiac == "Libra"){
+        return "destination9"
+    }
+    if (zodiac == "Scorpio"){
+        return "destination10"
+    }
+    if (zodiac == "Sagittarius"){
+        return "destination11"
+    }
+    if (zodiac == "Capricorn") {
+        return "destination12"
+    }
+    else {
+        return "Error. Please try again"
+    }
+}
 
-// 4. Main calculate function
+// main calculate function
 function calculate() {
     let month = parseInt(document.getElementById("month").value);
     let day = parseInt(document.getElementById("day").value);
@@ -97,8 +188,12 @@ function calculate() {
 
     let songs = getPlaylist(zodiac, genre);
     let celebrity = getCelebrity(zodiac, genre);
+    let movies = getMovieRec(zodiac);
+    let destination = getDestination(zodiac);
 
     document.getElementById("zodiacResult").innerText = "Your Zodiac: " + zodiac;
     document.getElementById("songRecs").innerText = songs.join(", ");
     document.getElementById("celebrityMatch").innerText = celebrity;
+    document.getElementById("recommendedMovies").innerText = movies;
+    document.getElementById("destination").innerText = destination;
 }
