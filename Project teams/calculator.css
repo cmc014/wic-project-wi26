@@ -34,6 +34,16 @@ body {
 
 /*WORDS*/
 
+.page h1 {
+    font-size: 40px;
+    font-weight: 800;
+
+    background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .calculator-card h1 {
     margin-top: 0;
     margin-bottom: 10px;
@@ -78,9 +88,13 @@ body {
 #zodiacForm select{
     width: 150px;
     padding: 12px 20px;
+
     border-radius: 12px;
-    border: 1px solid blue;
-    background-color: darkblue;
+    border: 1px solid rgb(117, 1, 146);
+    background-color: rgb(117, 1, 146);
+
+    box-shadow: 0 0 10px rgb(200, 149, 200);
+
     color: white;
     font-size: 1rem;
     outline: none;
@@ -114,7 +128,7 @@ body {
 }
 
 #zodiacForm button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
     box-shadow: 0 5px 10px rgb(45, 0, 67);
 }
 
@@ -130,7 +144,7 @@ body {
 .result-box {
     background: rgba(255, 255, 255, 0.08);
 
-    border-left: 5px solid #ffd700;
+    border-left: 5px solid #ad2dfc;
     border-radius: 16px;
     padding: 18px 20px;
 }
@@ -138,7 +152,7 @@ body {
 .result-box h3 {
     margin-top: 0;
     margin-bottom: 8px;
-    color: #ffd700;
+    color: #ad2dfc;
 }
 
 .result-box * {

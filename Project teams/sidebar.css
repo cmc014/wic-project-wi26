@@ -88,3 +88,14 @@
     cursor: pointer;
     padding: 10px 14px
 }
+
+/*WORDS*/
+
+.sidebar a {
+    font-weight: 500;
+    color: whitesmoke;
+}
+
+.openbutton {
+    font-weight: 600;
+}
