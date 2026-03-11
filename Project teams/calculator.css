@@ -132,6 +132,10 @@ body {
     box-shadow: 0 5px 10px rgb(45, 0, 67);
 }
 
+#zodiacForm button:active{
+    transform: translateY(2px);
+}
+
 
 /*RESULTSS*/
 
