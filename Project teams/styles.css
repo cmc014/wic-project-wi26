@@ -91,11 +91,11 @@ div.content {
   overflow: hidden;
   position: relative;
 
-  background-color: #5b12ad;
+  background-color: rgba(63, 2, 63, 0.507);
   text-align: center;
-  border: 1px solid #350060;
+  border: 2px solid rgb(87, 1, 108);
   border-radius: 16px;
-  box-shadow: 0 10px 15px rgba(19, 1, 58, 0.8);
+  box-shadow: 2px 2px 2px rgba(117, 1, 146, 0.327);
 
   will-change: flex-basis, padding, min-height, box-shadow;
 
@@ -121,6 +121,10 @@ div.content {
 
 .flex-item:hover h3{
     transform: scale(1.2);
+    background: linear-gradient(5deg, #ff006e, #8338ec, #3a86ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .popup-text{
@@ -190,10 +194,16 @@ div.content {
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s;
+    transition: transform 0.1s ease;
 }
 
 .nav-links a:hover {
     color: #ff006e;
+}
+
+.nav-links a:active {
+    transform: translateY(2px);
+    display: inline-block;
 }
 
 /* Hero Section */
