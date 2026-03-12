@@ -113,7 +113,7 @@ function getMovieRec (zodiac)
 // library for celebrity matches
 const celebrityMatches = {
     "Aquarius": { "Pop":"Celebrity AA", "Indie":"Celebrity B", "R&B":"Celebrity C" },
-    "Pisces": { "Pop":"Celebrity PA", "Indie":"Celebrity E", "R&B":"Celebrity F" },
+    "Pisces": { "Pop":"Olivia Rodrigo", "Indie":"Celebrity E", "R&B":"Rihanna" },
     "Aries": { "Pop":"Celebrity AA", "Indie":"Celebrity AR2", "R&B":"Celebrity AR3" },
     "Taurus": { "Pop":"Celebrity T1", "Indie":"Celebrity T2", "R&B":"Celebrity T3" },
     "Gemini": { "Pop":"Celebrity G1", "Indie":"Celebrity G2", "R&B":"Celebrity G3" },
