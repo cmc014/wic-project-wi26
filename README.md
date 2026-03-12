@@ -5,6 +5,7 @@ Features:
 - Zodiac Calculator with Interactive Dropdown
 - Zodiac Information Card Deck
 - Sidebar
+- Profile
 
 How to Run: Open index.html with Live Server in VSCode
 
