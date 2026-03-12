@@ -12,6 +12,7 @@
   <div class="sidebar">
     <a href="index.html">Home</a>
     <a href="calculator2.html">Calculator</a>
+    <a href = "profile.html">Profile</a>
   </div>
 
   <button id="togglebutton" type="button" class="openbutton">OPEN</button>
@@ -21,6 +22,7 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="calculator2.html">Calculator</a></li>
+      <li><a href = "profile.html">Profile</a></li>
     </ul>
   </nav>
 
@@ -153,8 +155,48 @@
     </div>
   </div>
 
+   <!-- Save to Profile button — only shows after results are calculated -->
+      <div id="save-btn-container" style="display:none; text-align:center; margin-top:30px;">
+        <button type="button" onclick="goToProfile()" style="
+          background: linear-gradient(135deg, #ff006e, #d90368);
+          color: white;
+          border: none;
+          padding: 16px 48px;
+          font-size: 17px;
+          font-weight: 600;
+          border-radius: 50px;
+          cursor: pointer;
+          box-shadow: 0 10px 40px rgba(255,0,110,0.4);
+          transition: all 0.3s;
+        " onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 15px 50px rgba(255,0,110,0.6)'"
+           onmouseout="this.style.transform='none';this.style.boxShadow='0 10px 40px rgba(255,0,110,0.4)'">
+          ✦ Save to Profile
+        </button>
+        <p style="color:rgba(255,255,255,0.5);font-size:13px;margin-top:10px;">
+          Your results will be auto-filled on the profile page
+        </p>
+      </div>
+
+    </div>
+  </div>
+
   <script src="calculator.js"></script>
   <script src="javascript.js"></script>
+  <script>
+    function goToProfile(){
+      window.location.href = 'profile.html';
+    }
+
+    // Show the save button after calculate() runs
+    const _origCalculate = calculate;
+    calculate = function(){
+      _origCalculate();
+      const result = document.getElementById('zodiacResult').innerText;
+      if(result && result !== '-'){
+        document.getElementById('save-btn-container').style.display = 'block';
+      }
+    };
+  </script>
 
 </body>
 </html>
