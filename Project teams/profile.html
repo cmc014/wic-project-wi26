@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CosmicPop — My Profiles</title>
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="styles.css">
+<style>
+    /* ── Compact overrides for profile page ── */
+    .hero { padding: 24px 20px; margin-bottom: 20px; }
+    .hero h1 { font-size: 32px; margin-bottom: 8px; }
+    .hero p  { font-size: 15px; margin-bottom: 0; }
+
+    .category-tabs { margin-bottom: 20px; }
+    .tab-btn { padding: 8px 22px; font-size: 13px; }
+
+    .section { padding: 24px 28px; margin-bottom: 24px; border-radius: 20px; }
+    .section h2 { font-size: 22px; margin-bottom: 20px; }
+
+    .form-grid { gap: 14px; margin-bottom: 16px; }
+    .form-group label { font-size: 11px; margin-bottom: 6px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { padding: 10px 12px; font-size: 14px; border-radius: 10px; }
+    .form-group textarea { min-height: 60px; }
+
+    .signs-grid { gap: 14px; }
+    .sign-card { padding: 16px 12px; border-radius: 14px; }
+    .sign-icon { font-size: 28px; margin-bottom: 8px; }
+    .sign-card h3 { font-size: 11px; margin-bottom: 6px; }
+    .sign-card .sign-name { font-size: 15px !important; }
+
+    .btn-primary  { padding: 12px 32px; font-size: 15px; }
+    .btn-secondary{ padding: 12px 32px; font-size: 15px; }
+    .btn-row { margin-top: 6px; margin-bottom: 24px !important; }
+
+    .profile-card { padding: 16px 20px; border-radius: 14px; }
+    .profile-avatar { width: 46px; height: 46px; font-size: 22px; }
+    .profile-name { font-size: 17px; }
+    .profile-meta { font-size: 12px; }
+
+    .chart-wheel { width: 120px; height: 120px; font-size: 48px; margin-bottom: 20px; }
+
+    footer { padding: 20px; margin-top: 20px; }
+
+    .empty-state { padding: 30px 20px; }
+    .empty-state .empty-icon { font-size: 36px; margin-bottom: 10px; }
+    .empty-state p { font-size: 15px; }
+  </style>
+
+
+
+</head>
+<body>
+<div class="container">
+
+  <!-- Nav -->
+  <nav>
+    <div class="logo">✨ Zodiac Pop</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="calculator2.html">Calculator</a></li>
+      <li><a href="profile.html" style="color:#ff006e">Profile</a></li>
+    </ul>
+  </nav>
+
+  <div class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="calculator2.html">Calculator</a>
+    <a href="profile.html">Profile</a>
+  </div>
+
+  <button id="togglebutton" type="button" class="openbutton">OPEN</button>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>My Celestial Profiles</h1>
+    <p>Save and revisit your birth chart readings — your cosmic blueprint, always within reach.</p>
+  </div>
+
+  <!-- Tabs -->
+  <div class="category-tabs">
+    <button class="tab-btn active" onclick="showTab('save', this)">✦ New Profile</button>
+    <button class="tab-btn" onclick="showTab('profiles', this)">🌙 My Profiles</button>
+  </div>
+
+  <!-- SAVE PANEL -->
+  <div id="panel-save">
+    <div class="section">
+      <h2>Birth Information</h2>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label for="f-name">Full Name</label>
+          <input id="f-name" type="text" placeholder="Your name"/>
+        </div>
+        <div class="form-group">
+          <label for="f-date">Birth Date</label>
+          <input id="f-date" type="date"/>
+        </div>
+        <div class="form-group">
+          <label for="f-time">Birth Time</label>
+          <input id="f-time" type="time"/>
+        </div>
+        <div class="form-group full">
+          <label for="f-place">Birth Location</label>
+          <input id="f-place" type="text" placeholder="City, Country"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="results-preview" style="display:none">
+      <h2>Your Zodiac Results</h2>
+      <p style="text-align:center;color:rgba(255,255,255,0.5);margin-top:-20px;margin-bottom:30px;font-size:14px">Auto-filled from your calculator results</p>
+
+      <!-- Hidden inputs so saveProfile() can still read the values -->
+      <input type="hidden" id="f-zodiac"/>
+      <input type="hidden" id="f-genre"/>
+      <input type="hidden" id="f-songs"/>
+      <input type="hidden" id="f-movies"/>
+      <input type="hidden" id="f-celeb"/>
+      <input type="hidden" id="f-destination"/>
+
+      <div class="signs-grid" id="results-preview-grid"></div>
+    </div>
+
+    <div class="section" id="no-results-msg" style="display:none">
+      <h2>Your Zodiac Results</h2>
+      <div class="empty-state" style="padding:30px 20px">
+        <div class="empty-icon">🔮</div>
+        <p>No calculator results found.<br/>
+          <a href="calculator2.html" style="color:#ff006e;text-decoration:none;font-weight:600">Run the calculator first →</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Notes</h2>
+      <div class="form-group">
+        <label for="f-notes">Personal Notes</label>
+        <textarea id="f-notes" placeholder="Any extra thoughts or insights…"></textarea>
+      </div>
+    </div>
+
+    <div class="btn-row" style="margin-bottom:60px">
+      <button class="btn-primary" onclick="saveProfile()">✦ Save Profile</button>
+      <button class="btn-secondary" onclick="clearForm()">Clear</button>
+    </div>
+  </div>
+
+  <!-- PROFILES PANEL -->
+  <div id="panel-profiles" style="display:none">
+    <div id="list-view">
+      <div class="section">
+        <h2>Saved Profiles</h2>
+        <div id="profiles-list" class="profiles-list"></div>
+      </div>
+    </div>
+    <div id="detail-view">
+      <div class="btn-row" style="margin-bottom:30px; justify-content:flex-start">
+        <button class="btn-secondary" onclick="closeDetail()">← Back</button>
+      </div>
+      <div id="detail-content"></div>
+    </div>
+  </div>
+
+  <footer><p>✨ Zodiac Pop — your cosmic blueprint, always within reach</p></footer>
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <h3>Delete Profile?</h3>
+    <p>This chart reading will be permanently removed. Are you sure?</p>
+    <div class="btn-row" style="margin-top:30px">
+      <button class="btn-primary" id="modal-confirm">Delete</button>
+      <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const SIGN_GLYPHS = {
+  'Aries':'♈','Taurus':'♉','Gemini':'♊','Cancer':'♋',
+  'Leo':'♌','Virgo':'♍','Libra':'♎','Scorpio':'♏',
+  'Sagittarius':'♐','Capricorn':'♑','Aquarius':'♒','Pisces':'♓'
+};
+
+/* Storage */
+const KEY = 'cosmicpop_profiles';
+function loadAll(){ try{ return JSON.parse(localStorage.getItem(KEY))||[]; }catch{ return []; } }
+function saveAll(d){ localStorage.setItem(KEY, JSON.stringify(d)); }
+function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
+
+/* Tabs */
+function showTab(t, btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.getElementById('panel-save').style.display     = t==='save'     ? 'block':'none';
+  document.getElementById('panel-profiles').style.display = t==='profiles' ? 'block':'none';
+  if(t==='profiles') renderProfiles();
+}
+
+/* Save */
+function saveProfile(){
+  const name = document.getElementById('f-name').value.trim();
+  const date = document.getElementById('f-date').value;
+  if(!name){ toast('Please enter a name ✦'); return; }
+  if(!date){ toast('Please enter a birth date ✦'); return; }
+
+  const profile = {
+    id: uid(), name, date,
+    time:        document.getElementById('f-time').value,
+    place:       document.getElementById('f-place').value.trim(),
+    zodiac:      document.getElementById('f-zodiac').value.trim(),
+    genre:       document.getElementById('f-genre').value.trim(),
+    songs:       document.getElementById('f-songs').value.trim(),
+    movies:      document.getElementById('f-movies').value.trim(),
+    celeb:       document.getElementById('f-celeb').value.trim(),
+    destination: document.getElementById('f-destination').value.trim(),
+    notes:       document.getElementById('f-notes').value.trim(),
+    saved: new Date().toISOString()
+  };
+
+  const all = loadAll();
+  all.unshift(profile);
+  saveAll(all);
+  toast('Profile saved to the cosmos! ✦');
+  clearForm();
+}
+
+function clearForm(){
+  ['f-name','f-date','f-time','f-place','f-zodiac','f-genre','f-songs','f-movies','f-celeb','f-destination','f-notes']
+    .forEach(id => document.getElementById(id).value = '');
+  document.getElementById('results-preview').style.display  = 'none';
+  document.getElementById('no-results-msg').style.display   = 'none';
+  document.getElementById('results-preview-grid').innerHTML = '';
+}
+
+/* List */
+function renderProfiles(){
+  const all = loadAll();
+  document.getElementById('list-view').style.display='block';
+  document.getElementById('detail-view').style.display='none';
+  const el = document.getElementById('profiles-list');
+
+  if(!all.length){
+    el.innerHTML=`<div class="empty-state"><div class="empty-icon">🌌</div><p>No profiles yet — save your first birth chart above!</p></div>`;
+    return;
+  }
+
+  el.innerHTML = all.map(p=>{
+    const zodiac  = p.zodiac || '—';
+    const avatar  = SIGN_GLYPHS[zodiac] || '✦';
+    const fmtDate = p.date ? new Date(p.date+'T12:00:00').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}) : '';
+    return `
+      <div class="profile-card" onclick="openDetail('${p.id}')">
+        <div class="profile-avatar">${avatar}</div>
+        <div class="profile-info">
+          <div class="profile-name">${p.name}</div>
+          <div class="profile-meta">${fmtDate}${p.place?' · '+p.place:''}</div>
+          <div>
+            <span class="sign-badge">✦ ${zodiac}</span>
+            ${p.genre ? `<span class="sign-badge">🎵 ${p.genre}</span>` : ''}
+            ${p.destination ? `<span class="sign-badge">✈️ ${p.destination}</span>` : ''}
+          </div>
+        </div>
+        <div class="profile-actions" onclick="event.stopPropagation()">
+          <button class="btn-view" onclick="openDetail('${p.id}')">View</button>
+          <button class="btn-danger" onclick="confirmDelete('${p.id}')">Delete</button>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+/* Detail */
+function openDetail(id){
+  const p = loadAll().find(x=>x.id===id);
+  if(!p) return;
+  document.getElementById('list-view').style.display='none';
+  document.getElementById('detail-view').style.display='block';
+
+  const fmtDate = p.date ? new Date(p.date+'T12:00:00').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}) : '';
+  const zodiac  = p.zodiac || '—';
+  const avatar  = SIGN_GLYPHS[zodiac] || '✦';
+
+  function resultCard(icon, label, value){
+    if(!value) return '';
+    return `<div class="sign-card">
+      <div class="sign-icon">${icon}</div>
+      <h3>${label}</h3>
+      <div class="sign-name" style="font-size:18px;line-height:1.5">${value.replace(/\n/g,'<br/>')}</div>
+    </div>`;
+  }
+
+  document.getElementById('detail-content').innerHTML = `
+    <div class="section" style="text-align:center">
+      <div class="chart-wheel">${avatar}</div>
+      <h2>${p.name}</h2>
+      <p style="color:rgba(255,255,255,0.6);margin-top:8px;font-size:16px">${fmtDate}${p.place?' · '+p.place:''}</p>
+      ${p.genre ? `<p style="margin-top:8px"><span class="sign-badge">🎵 ${p.genre}</span></p>` : ''}
+    </div>
+
+    <div class="section">
+      <h2>Your Results</h2>
+      <div class="signs-grid">
+        ${resultCard('✦', 'Zodiac Sign', zodiac)}
+        ${resultCard('🎵', 'Recommended Songs', p.songs)}
+        ${resultCard('🎬', 'Recommended Movies', p.movies)}
+        ${resultCard('⭐', 'Celebrity Match', p.celeb)}
+        ${resultCard('✈️', 'Dream Destination', p.destination)}
+      </div>
+    </div>
+
+    ${p.notes ? `
+    <div class="section">
+      <div class="notes-block">
+        <h3>✦ Notes</h3>
+        <p>${p.notes.replace(/\n/g,'<br/>')}</p>
+      </div>
+    </div>` : ''}
+
+    <div class="btn-row" style="margin-bottom:60px">
+      <button class="btn-danger" style="padding:14px 36px;font-size:16px" onclick="confirmDelete('${p.id}')">Delete Profile</button>
+    </div>
+  `;
+}
+
+function closeDetail(){ renderProfiles(); }
+
+/* Delete */
+let pendingDelete = null;
+function confirmDelete(id){
+  pendingDelete = id;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.getElementById('modal-confirm').onclick = ()=>{
+    saveAll(loadAll().filter(p=>p.id!==pendingDelete));
+    closeModal();
+    toast('Profile removed');
+    renderProfiles();
+  };
+}
+function closeModal(){
+  document.getElementById('modal-overlay').classList.remove('open');
+  pendingDelete = null;
+}
+
+/* Auto-fill from calculator results stored in sessionStorage */
+function fillProfileFromCalculator(data){
+  const zodiac      = (data.zodiac || '').replace('Your Zodiac: ', '').trim();
+  const genre       = (data.genre  || '').trim();
+  const songs       = (data.songs  || '').trim();
+  const movies      = (data.movies || '').trim();
+  const celeb       = (data.celeb  || '').trim();
+  const destination = (data.destination || '').trim();
+
+  // Fill hidden inputs so saveProfile() picks them up
+  document.getElementById('f-zodiac').value      = zodiac;
+  document.getElementById('f-genre').value       = genre;
+  document.getElementById('f-songs').value       = songs;
+  document.getElementById('f-movies').value      = movies;
+  document.getElementById('f-celeb').value       = celeb;
+  document.getElementById('f-destination').value = destination;
+
+  // Build preview cards
+  const SIGN_EMOJI = {'Aries':'♈','Taurus':'♉','Gemini':'♊','Cancer':'♋','Leo':'♌','Virgo':'♍','Libra':'♎','Scorpio':'♏','Sagittarius':'♐','Capricorn':'♑','Aquarius':'♒','Pisces':'♓'};
+  const cards = [
+    { icon: SIGN_EMOJI[zodiac] || '✦', label: 'Zodiac Sign',        value: zodiac      },
+    { icon: '🎵',                       label: `${genre} Song Pick`,  value: songs       },
+    { icon: '🎬',                       label: 'Recommended Movie',   value: movies      },
+    { icon: '⭐',                       label: 'Celebrity Match',     value: celeb       },
+    { icon: '✈️',                       label: 'Dream Destination',   value: destination },
+  ];
+
+  document.getElementById('results-preview-grid').innerHTML = cards
+    .filter(c => c.value)
+    .map(c => `
+      <div class="sign-card">
+        <div class="sign-icon">${c.icon}</div>
+        <h3>${c.label}</h3>
+        <div class="sign-name" style="font-size:18px;line-height:1.5">${c.value}</div>
+      </div>`).join('');
+
+  document.getElementById('results-preview').style.display  = 'block';
+  document.getElementById('no-results-msg').style.display   = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = sessionStorage.getItem('calcResults');
+  if(saved){
+    try { fillProfileFromCalculator(JSON.parse(saved)); } catch(e) {
+      document.getElementById('no-results-msg').style.display = 'block';
+    }
+  } else {
+    document.getElementById('no-results-msg').style.display = 'block';
+  }
+});
+
+/* Toast */
+let toastTimer;
+function toast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>el.classList.remove('show'), 2800);
+}
+</script>
+
+<!-- Sidebar toggle + your existing JS -->
+<script src="javascript.js"></script>
+
+</body>
+</html>

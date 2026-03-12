@@ -196,4 +196,14 @@ function calculate() {
     document.getElementById("celebrityMatch").innerText = celebrity;
     document.getElementById("recommendedMovies").innerText = movies;
     document.getElementById("destination").innerText = destination;
+
+    sessionStorage.setItem('calcResults', JSON.stringify({
+  zodiac:      document.getElementById('zodiacResult').innerText,
+  genre:       document.getElementById('genre').value,
+  songs:       document.getElementById('songRecs').innerText,
+  movies:      document.getElementById('recommendedMovies').innerText,
+  celeb:       document.getElementById('celebrityMatch').innerText,
+  destination: document.getElementById('destination').innerText
+}));
 }
+
