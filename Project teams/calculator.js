@@ -44,18 +44,18 @@ function getZodiac(month, day) {
 
 //song rec library
 const playlists = {
-    "Aquarius": { "Pop": ["Song A1","Song A2"], "Indie":["Song A3","Song A4"], "R&B":["Song A5","Song A6"] },
-    "Pisces": { "Pop": ["Song P1","Song P2"], "Indie":["Song P3","Song P4"], "R&B":["Song P5","Song P6"] },
-    "Aries": { "Pop":["Song AR1","Song AR2"], "Indie":["Song AR3","Song AR4"], "R&B":["Song AR5","Song AR6"] },
-    "Taurus": { "Pop":["Song T1"], "Indie":["Song T2"], "R&B":["Song T3"] },
-    "Gemini": { "Pop":["Song G1"], "Indie":["Song G2"], "R&B":["Song G3"] },
-    "Cancer": { "Pop":["Song C1"], "Indie":["Song C2"], "R&B":["Song C3"] },
-    "Leo": { "Pop":["Song L1"], "Indie":["Song L2"], "R&B":["Song L3"] },
-    "Virgo": { "Pop":["Song V1"], "Indie":["Song V2"], "R&B":["Song V3"] },
-    "Libra": { "Pop":["Song LB1"], "Indie":["Song LB2"], "R&B":["Song LB3"] },
-    "Scorpio": { "Pop":["Song S1"], "Indie":["Song S2"], "R&B":["Song S3"] },
-    "Sagittarius": { "Pop":["Song SG1"], "Indie":["Song SG2"], "R&B":["Song SG3"] },
-    "Capricorn": { "Pop":["Song CP1"], "Indie":["Song CP2"], "R&B":["Song CP3"] }
+    "Aquarius": { "Pop": ["\"Party Monster\" The Weeknd"], "Indie":["\"Moonlight On The River\" Mac Demarco"], "R&B":["\"Call Out My Name\" The Weeknd"] },
+    "Pisces": { "Pop": ["\"Born This Way\" Lady Gaga"], "Indie":["\"Losing You\" Solange"], "R&B":["\"Normal Girl\" SZA"] },
+    "Aries": { "Pop":["\"Moves Like Jagger\" Maroon 5, Christina Aguilera",], "Indie":["\"Lover's Rock\" TV Girl"], "R&B":["\"Lady of Neptune\" Tory Lanez"] },
+    "Taurus": { "Pop":["\"Love To Love You Baby\" Donna Summer"], "Indie":["\"Image\" Magdalena Bay"], "R&B":["\"The Boy Is Mine\" Brandy, Monica"] },
+    "Gemini": { "Pop":["\"Just Dance\" Lady Gaga"], "Indie":["\"Supercut\" Lorde"], "R&B":["\"Sure Thing\" Miguel"] },
+    "Cancer": { "Pop":["\"yes, and?\" Ariana Grande"], "Indie":["\"About You\" The 1975"], "R&B":["\"Hit Different\" SZA"] },
+    "Leo": { "Pop":["\"Vogue\" Madonna"], "Indie":["\"Sexy to Someone\" Clairo"], "R&B":["\"Say My Name\" Destiny's Child"] },
+    "Virgo": { "Pop":["\"VIRGO'S GROOVE\" Beyoncé"], "Indie":["\"Stargazing\" The Neighborhood"], "R&B":["\"Thinkin Bout You\" Frank Ocean"] },
+    "Libra": { "Pop":["\"PUSH 2 START\" Tyla"], "Indie":["\"You Are the Right One\" Sports"], "R&B":["\"Love On The Brain\" Rihanna"] },
+    "Scorpio": { "Pop":["\"The One That Got Away\" Katy Perry"], "Indie":["\"How to disappear\" Lana Del Rey"], "R&B":["\"Insane\" Summer Walker"] },
+    "Sagittarius": { "Pop":["\"We Can't Stop\" Miley Cyrus"], "Indie":["\"Let It Happen\" Tame Impala"], "R&B":["\"Belong to the City\" PARTYNEXTDOOR"] },
+    "Capricorn": { "Pop":["\"Good Luck, Babe\" Chappell Roan"], "Indie":["\"Show Me How\" Men I Trust"], "R&B":["\"Sorrows\" Bryson Tiller"] }
 };
 
 // function for getting playlist based on zodiac and genre
@@ -70,40 +70,40 @@ function getPlaylist(zodiac, genre) {
 function getMovieRec (zodiac)
 {
     if (zodiac == "Aquarius"){
-        return "movie"
+        return "\'Parasite\'"
     }
     if (zodiac == "Pisces"){
-        return "movie"
+        return "'500 Days of Summer\'"
     }
     if (zodiac == "Aries"){
-        return "movie"
+        return "\'The Notebook\'"
     }
     if (zodiac == "Taurus"){
-        return "movie"
+        return "\'Whiplash\'"
     }
     if (zodiac == "Gemini"){
-        return "movie"
+        return "'Forrest Gump\'"
     }
     if (zodiac == "Cancer"){
-        return "movie"
+        return "\'Pride and Prejudice\'"
     }
     if (zodiac == "Leo"){
-        return "movie"
+        return "'Superbad\'"
     }
     if (zodiac == "Virgo"){
-        return "movie"
+        return "\'The Great Gatsby\'"
     }
     if (zodiac == "Libra"){
-        return "movie"
+        return "\'Wuthering Heights\'"
     }
     if (zodiac == "Scorpio"){
-        return "movie"
+        return "\'The Social Network\'"
     }
     if (zodiac == "Sagittarius"){
-        return "movie"
+        return "\'13 Going on 30\'"
     }
     if (zodiac == "Capricorn") {
-        return "movie"
+        return "\'Eternal Sunshine of the Spotless Mind\'"
     }
     else {
         return "Error. Please try again"
@@ -137,40 +137,40 @@ function getCelebrity(zodiac, genre) {
 function getDestination (zodiac)
 {
     if (zodiac == "Aquarius"){
-        return "destination1"
+        return "San Francisco"
     }
     if (zodiac == "Pisces"){
-        return "destination2"
+        return "Tokyo"
     }
     if (zodiac == "Aries"){
-        return "destination3"
+        return "Paris"
     }
     if (zodiac == "Taurus"){
-        return "destination4"
+        return "Rome"
     }
     if (zodiac == "Gemini"){
-        return "destination5"
+        return "Shanghai"
     }
     if (zodiac == "Cancer"){
-        return "destination6"
+        return "Dubai"
     }
     if (zodiac == "Leo"){
-        return "destination7"
+        return "Rio de Janeiro"
     }
     if (zodiac == "Virgo"){
-        return "destination8"
+        return "Capetown"
     }
     if (zodiac == "Libra"){
-        return "destination9"
+        return "New York"
     }
     if (zodiac == "Scorpio"){
-        return "destination10"
+        return "Copenhagen"
     }
     if (zodiac == "Sagittarius"){
-        return "destination11"
+        return "Miami"
     }
     if (zodiac == "Capricorn") {
-        return "destination12"
+        return "London"
     }
     else {
         return "Error. Please try again"
