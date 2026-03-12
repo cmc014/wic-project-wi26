@@ -112,18 +112,18 @@ function getMovieRec (zodiac)
 
 // library for celebrity matches
 const celebrityMatches = {
-    "Aquarius": { "Pop":"Celebrity AA", "Indie":"Celebrity B", "R&B":"Celebrity C" },
-    "Pisces": { "Pop":"Olivia Rodrigo", "Indie":"Celebrity E", "R&B":"Rihanna" },
-    "Aries": { "Pop":"Celebrity AA", "Indie":"Celebrity AR2", "R&B":"Celebrity AR3" },
-    "Taurus": { "Pop":"Celebrity T1", "Indie":"Celebrity T2", "R&B":"Celebrity T3" },
-    "Gemini": { "Pop":"Celebrity G1", "Indie":"Celebrity G2", "R&B":"Celebrity G3" },
-    "Cancer": { "Pop":"Celebrity C", "Indie":"Celebrity C2", "R&B":"Celebrity C3" },
-    "Leo": { "Pop":"Celebrity L", "Indie":"Celebrity L2", "R&B":"Celebrity L3" },
-    "Virgo": { "Pop":"Celebrity V", "Indie":"Celebrity V2", "R&B":"Celebrity V3" },
-    "Libra": { "Pop":"Celebrity LB", "Indie":"Celebrity LB2", "R&B":"Celebrity LB3" },
-    "Scorpio": { "Pop":"Celebrity S", "Indie":"Celebrity S2", "R&B":"Celebrity S3" },
-    "Sagittarius": { "Pop":"Celebrity SG", "Indie":"Celebrity SG2", "R&B":"Celebrity SG3" },
-    "Capricorn": { "Pop":"Celebrity CP", "Indie":"Celebrity CP2", "R&B":"Celebrity CP3" }
+"Aquarius": { "Pop":"Harry Styles", "Indie":"Arctic Monkeys", "R&B":"Tinashe" },
+"Pisces": { "Pop":"Olivia Rodrigo", "Indie":"Chris Martin", "R&B":"Rihanna" },
+"Aries": { "Pop":"Mariah Carey", "Indie":"Summer Walker", "R&B":"Celine Dion" },
+"Taurus": { "Pop":"Sabrina Carpenter", "Indie":"Cher", "R&B":"Kehlani" },
+"Gemini": { "Pop":"Lana Del Rey", "Indie":"Prince", "R&B":"Lauryn Hill" },
+"Cancer": { "Pop":"Ariana Grande", "Indie":"Cat Stevens", "R&B":"Solange" },
+"Leo": { "Pop":"Dua Lipa", "Indie":"Kate Bush", "R&B":"Jennifer Lopez" },
+"Virgo": { "Pop":"Michael Jackson", "Indie":"Feist", "R&B":"Beyoncé" },
+"Libra": { "Pop":"Bruno Mars", "Indie":"John Lennon", "R&B":"Usher" },
+"Scorpio": { "Pop":"Katy Perry", "Indie":"Frank Ocean", "R&B":"SZA" },
+"Sagittarius": { "Pop":"Taylor Swift", "Indie":"Billie Eilish", "R&B":"Tina Turner" },
+"Capricorn": { "Pop":"Elvis Presley", "Indie":"David Bowie", "R&B":"Mary J. Blige" }
 };
 
 // calculation function for celebrity
