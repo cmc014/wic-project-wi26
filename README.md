@@ -5,7 +5,7 @@ Features:
 - Zodiac Calculator with Interactive Dropdown
 - Zodiac Information Card Deck
 - Sidebar
-- Profile
+- Profile (with help from Claude)
 
 How to Run: Open index.html with Live Server in VSCode
 
@@ -13,6 +13,6 @@ Technologies Used:
 - JavaScript
 - HTML
 - CSS
-- Github (documentation)
+- Github (documentation and version control)
 
 Authors: An Nghi Nguyen, Sarah Kim, Elysia Jin, Christina Asinobi, Callie Chen
